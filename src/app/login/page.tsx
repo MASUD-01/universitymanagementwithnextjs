@@ -5,6 +5,9 @@ import Image from "next/image";
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
 import { SubmitHandler } from "react-hook-form";
+import { useUserLoginMutation } from "@/redux/api/authApi";
+import { storeUserInfo } from "@/services/auth.service";
+import { useRouter } from "next/navigation";
 
 type FormValues = {
   id: string;
@@ -12,9 +15,19 @@ type FormValues = {
 };
 
 const LoginPage = () => {
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
+  const [userLogin] = useUserLoginMutation();
+  //redirect er jonne eta import hobe nextNavigation theke
+  const router = useRouter();
+  const onSubmit: SubmitHandler<FormValues> = async (data) => {
     try {
-      console.log(data);
+      const res = await userLogin({ ...data }).unwrap(); //response e sudhu accessToken e asbe(modify kora hoise axios interceptorResponse theke, modify mane success:true,message:'', asbena, tar mane backend theke astece thiki kintu ami client e modify korlam axios er madhomme)
+
+      console.log(res);
+      if (res?.accessToken) {
+        //accessToken thakle redirect kore profile page e niye jao
+        router.push("/profile");
+      }
+      storeUserInfo({ accessToken: res?.accessToken });
     } catch (err) {
       console.log(err);
     }
@@ -67,3 +80,8 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+
+/* how login works?
+-->
+
+*/
