@@ -65,3 +65,8 @@ Interceptors: req, res modify korte help kore,,,jemon(//response e sudhu accessT
 ans: karon server side hobe abong google keawl korbe tai oi componet take use client name akta component e use kore load korbo page.tsx server componet e
 
  -->
+
+<!-- *******step form e reload dile data thakbe, using local storage********** -->
+<!-- ----------yup form validation
+abong eke resolve korar jonne yup resolver use kora hoyeche
+-->
