@@ -70,3 +70,12 @@ ans: karon server side hobe abong google keawl korbe tai oi componet take use cl
 <!-- ----------yup form validation
 abong eke resolve korar jonne yup resolver use kora hoyeche
 -->
+
+<!-- console error
+
+Extra attributes from the server: data-new-gr-c-s-check-loaded,data-gr-ext-installed
+
+ans: grammerly extension er jonne
+ -->
+
+<!-- **********searchBar e useDebounced use kora hoice -->
