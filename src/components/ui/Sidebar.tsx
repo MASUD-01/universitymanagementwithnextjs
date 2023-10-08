@@ -8,7 +8,7 @@ const { Sider } = Layout;
 const Sidebar = () => {
   const [collapsed, setCollapsed] = useState(false);
   //const roles = USER_ROLE.ADMIN;
-  const role = "super_admin";
+  const role = "admin";
   // const { role } = getUserInfo() as userinfo;
   return (
     <Sider
