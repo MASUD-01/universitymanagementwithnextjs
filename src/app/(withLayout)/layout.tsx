@@ -12,6 +12,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
+    /* --route is protected, if user does not exit it will return /login,,,,here withLayout er kono route e access pabe na jodi login kora na thake */
     if (!userLoggedIn) {
       router.push("/login");
     }
