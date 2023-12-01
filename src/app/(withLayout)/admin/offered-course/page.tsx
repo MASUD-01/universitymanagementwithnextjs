@@ -13,15 +13,11 @@ import { useState } from "react";
 import ActionBar from "@/components/ui/ActionBar";
 import { useDebounced } from "@/redux/hooks";
 import dayjs from "dayjs";
+
 import {
   useDeleteOfferedCourseMutation,
   useOfferedCoursesQuery,
-} from "@/redux/api/offredCourseApi";
-
-// import {
-//   useDeleteOfferedCourseMutation,
-//   useOfferedCoursesQuery,
-// } from "@/redux/api/offeredCourseApi";
+} from "@/redux/api/offeredCourseApi";
 
 const OfferedCoursePage = () => {
   const query: Record<string, any> = {};

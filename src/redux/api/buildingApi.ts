@@ -21,7 +21,6 @@ export const buildingApi = baseApi.injectEndpoints({
           meta,
         };
       },
-      //@ts-ignore
       providesTags: [tagTypes.building],
     }),
     // get single building
@@ -30,7 +29,6 @@ export const buildingApi = baseApi.injectEndpoints({
         url: `${BUILDING_URL}/${id}`,
         method: "GET",
       }),
-      //@ts-ignore
       providesTags: [tagTypes.building],
     }),
     // create a new building
@@ -40,7 +38,6 @@ export const buildingApi = baseApi.injectEndpoints({
         method: "POST",
         data,
       }),
-      //@ts-ignore
       invalidatesTags: [tagTypes.building],
     }),
     // update existing building
@@ -50,7 +47,6 @@ export const buildingApi = baseApi.injectEndpoints({
         method: "PATCH",
         data: data.body,
       }),
-      //@ts-ignore
       invalidatesTags: [tagTypes.building],
     }),
     // delete existing building
@@ -59,7 +55,6 @@ export const buildingApi = baseApi.injectEndpoints({
         url: `${BUILDING_URL}/${id}`,
         method: "DELETE",
       }),
-      //@ts-ignore
       invalidatesTags: [tagTypes.building],
     }),
   }),

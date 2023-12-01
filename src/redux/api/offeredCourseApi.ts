@@ -20,7 +20,6 @@ export const offeredCourseApi = baseApi.injectEndpoints({
           meta,
         };
       },
-      //@ts-ignore
       providesTags: [tagTypes.offeredCourse],
     }),
     offeredCourse: build.query({
@@ -28,7 +27,6 @@ export const offeredCourseApi = baseApi.injectEndpoints({
         url: `${BASE_OFFERED_COURSES}/${id}`,
         method: "GET",
       }),
-      //@ts-ignore
       providesTags: [tagTypes.offeredCourse],
     }),
     addOfferedCourse: build.mutation({
@@ -37,7 +35,6 @@ export const offeredCourseApi = baseApi.injectEndpoints({
         method: "POST",
         data,
       }),
-      //@ts-ignore
       invalidatesTags: [tagTypes.offeredCourse],
     }),
     updateOfferedCourse: build.mutation({
@@ -46,7 +43,6 @@ export const offeredCourseApi = baseApi.injectEndpoints({
         method: "PATCH",
         data: data.body,
       }),
-      //@ts-ignore
       invalidatesTags: [tagTypes.offeredCourse],
     }),
     deleteOfferedCourse: build.mutation({
@@ -54,7 +50,6 @@ export const offeredCourseApi = baseApi.injectEndpoints({
         url: `${BASE_OFFERED_COURSES}/${id}`,
         method: "DELETE",
       }),
-      //@ts-ignore
       invalidatesTags: [tagTypes.offeredCourse],
     }),
   }),
@@ -62,6 +57,7 @@ export const offeredCourseApi = baseApi.injectEndpoints({
 
 export const {
   useOfferedCoursesQuery,
+  useOfferedCourseQuery,
   useAddOfferedCourseMutation,
   useDeleteOfferedCourseMutation,
   useUpdateOfferedCourseMutation,

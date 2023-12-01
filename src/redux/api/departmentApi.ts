@@ -18,7 +18,6 @@ export const departmentApi = baseApi.injectEndpoints({
           meta,
         };
       },
-      //@ts-ignore
       providesTags: [tagTypes.department],
     }),
 
@@ -28,7 +27,6 @@ export const departmentApi = baseApi.injectEndpoints({
         method: "POST",
         data,
       }),
-      //@ts-ignore
       invalidatesTags: [tagTypes.department],
     }),
 
@@ -38,7 +36,6 @@ export const departmentApi = baseApi.injectEndpoints({
         url: `${DEPARTMENT_URL}/${id}`,
         method: "GET",
       }),
-      //@ts-ignore
       providesTags: [tagTypes.department],
     }),
 
@@ -49,7 +46,6 @@ export const departmentApi = baseApi.injectEndpoints({
         method: "PATCH",
         data: data.body,
       }),
-      //@ts-ignore
       invalidatesTags: [tagTypes.department],
     }),
 
@@ -59,7 +55,6 @@ export const departmentApi = baseApi.injectEndpoints({
         url: `${DEPARTMENT_URL}/${id}`,
         method: "DELETE",
       }),
-      //@ts-ignore
       invalidatesTags: [tagTypes.department],
     }),
   }),

@@ -21,7 +21,6 @@ export const courseApi = baseApi.injectEndpoints({
           meta,
         };
       },
-      //@ts-ignore
       providesTags: [tagTypes.course],
     }),
     // get single
@@ -30,7 +29,6 @@ export const courseApi = baseApi.injectEndpoints({
         url: `${COURSE_URL}/${id}`,
         method: "GET",
       }),
-      //@ts-ignore
       providesTags: [tagTypes.course],
     }),
     // create
@@ -40,7 +38,6 @@ export const courseApi = baseApi.injectEndpoints({
         method: "POST",
         data,
       }),
-      //@ts-ignore
       invalidatesTags: [tagTypes.course],
     }),
     // update
@@ -50,7 +47,6 @@ export const courseApi = baseApi.injectEndpoints({
         method: "PATCH",
         data: data.body,
       }),
-      //@ts-ignore
       invalidatesTags: [tagTypes.course],
     }),
     // delete
@@ -59,7 +55,6 @@ export const courseApi = baseApi.injectEndpoints({
         url: `${COURSE_URL}/${id}`,
         method: "DELETE",
       }),
-      //@ts-ignore
       invalidatesTags: [tagTypes.course],
     }),
   }),

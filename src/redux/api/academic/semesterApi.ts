@@ -1,6 +1,6 @@
 import { IAcademicSemester, IMeta } from "@/types";
 import { baseApi } from "../baseApi";
-import { tagTypes } from "../../../redux/tag-types";
+import { tagTypes } from "@/redux/tag-types";
 
 const ACADEMIC_SEMESTER_URL = "/academic-semesters";
 

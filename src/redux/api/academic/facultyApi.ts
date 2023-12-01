@@ -22,7 +22,6 @@ export const academicFacultyApi = baseApi.injectEndpoints({
           meta,
         };
       },
-      //@ts-ignore
       providesTags: [tagTypes.academicFaculty],
     }),
     // get single academic faculty by id api endpoint

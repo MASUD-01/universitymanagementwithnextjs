@@ -1,8 +1,8 @@
 "use client";
 import Contents from "@/components/ui/Contents";
-import Sidebar from "@/components/ui/Sidebar";
+import SideBar from "@/components/ui/Sidebar";
 import { isLoggedIn } from "@/services/auth.service";
-import { Layout } from "antd";
+import { Layout, Row, Space, Spin } from "antd";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -12,7 +12,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    /* --route is protected, if user does not exit it will return /login,,,,here withLayout er kono route e access pabe na jodi login kora na thake */
+    //route is protected
     if (!userLoggedIn) {
       router.push("/login");
     }
@@ -20,13 +20,24 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   }, [router, isLoading]);
 
   if (!isLoading) {
-    //eta na dileo hobe karon global loading ache
-    return <p>Loading.....</p>;
+    return (
+      <Row
+        justify="center"
+        align="middle"
+        style={{
+          height: "100vh",
+        }}
+      >
+        <Space>
+          <Spin tip="Loading" size="large"></Spin>
+        </Space>
+      </Row>
+    );
   }
 
   return (
     <Layout hasSider>
-      <Sidebar />
+      <SideBar />
       <Contents>{children}</Contents>
     </Layout>
   );

@@ -1,20 +1,27 @@
 "use client";
+
+import { useState } from "react";
 import { Layout, Menu } from "antd";
-import React, { useState } from "react";
+
 import { sidebarItems } from "@/constants/sidebarItems";
-// import { getUserInfo } from "@/services/auth.service";
-// import { userinfo } from "@/types";
+import { USER_ROLE } from "@/constants/role";
+import { getUserInfo } from "@/services/auth.service";
+
 const { Sider } = Layout;
-const Sidebar = () => {
+
+const SideBar = () => {
   const [collapsed, setCollapsed] = useState(false);
-  //const roles = USER_ROLE.ADMIN;
-  const role = "admin";
-  // const { role } = getUserInfo() as userinfo;
+
+  // const role = USER_ROLE.ADMIN;
+  const { role } = getUserInfo() as any;
+  // console.log(role);
+
   return (
     <Sider
       collapsible
       collapsed={collapsed}
       onCollapse={(value) => setCollapsed(value)}
+      width={280}
       style={{
         overflow: "auto",
         height: "100vh",
@@ -24,7 +31,18 @@ const Sidebar = () => {
         bottom: 0,
       }}
     >
-      <div>UMS</div>
+      <div
+        style={{
+          color: "white",
+          fontSize: "2rem",
+          textAlign: "center",
+          fontWeight: "bold",
+          marginBottom: ".5rem",
+          padding: "10px 0px",
+        }}
+      >
+        UMS
+      </div>
       <Menu
         theme="dark"
         defaultSelectedKeys={["1"]}
@@ -35,4 +53,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default SideBar;

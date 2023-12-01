@@ -1,21 +1,19 @@
-import { authKey } from "../../constants/storagekey";
-import { IGenericErrorResponse, ResponseSuccessType } from "@/types";
-import { getFromLocalStorage } from "@/utils/local-storage";
-import axios, { AxiosResponse } from "axios";
+import { authKey } from "@/constants/storageKey";
 
-//50.8 video
-//akta intance create kora hosse jekhane amra default kisu use kortaci
+import { IGenericErrorResponse, ResponseSuccessType } from "@/types";
+import { getFromLocalStorage, setToLocalStorage } from "@/utils/local-storage";
+import axios from "axios";
+
 const instance = axios.create();
-instance.defaults.headers.post["Content-Type"] = "application/json"; //formData bade sob kisu application/json(era body te patahi)
+instance.defaults.headers.post["Content-Type"] = "application/json";
 instance.defaults.headers["Accept"] = "application/json";
-instance.defaults.timeout = 60000; // etar mane server crash korle 1 minute por amader janabe
+instance.defaults.timeout = 60000;
 
 // Add a request interceptor
 instance.interceptors.request.use(
   function (config) {
     // Do something before request is sent
     const accessToken = getFromLocalStorage(authKey);
-    //eta amra kortesi authentication er somoy, backend ekhan theke niye nibe
     if (accessToken) {
       config.headers.Authorization = accessToken;
     }
@@ -23,28 +21,31 @@ instance.interceptors.request.use(
   },
   function (error) {
     // Do something with request error
-    return Promise.reject(error); //request er khetre kono error thakle eikhan theke return kore dibe
+    return Promise.reject(error);
   }
 );
 
-//50.9 video
 // Add a response interceptor
-//@ts-ignore
 instance.interceptors.response.use(
-  function (response: AxiosResponse<any, any>): any {
+  //@ts-ignore
+  function (response) {
     const responseObject: ResponseSuccessType = {
       data: response?.data?.data,
       meta: response?.data?.meta,
     };
     return responseObject;
   },
-  function (error) {
-    const responseObject: IGenericErrorResponse = {
-      statusCode: error?.response?.data?.statusCode || 500,
-      message: error?.response?.data?.message || "Something went wrong",
-      errorMessages: error?.response?.data?.message,
-    };
-    return responseObject;
+  async function (error) {
+    if (error?.response?.status === 403) {
+    } else {
+      const responseObject: IGenericErrorResponse = {
+        statusCode: error?.response?.data?.statusCode || 500,
+        message: error?.response?.data?.message || "Something went wrong",
+        errorMessages: error?.response?.data?.message,
+      };
+      return responseObject;
+    }
+
     // return Promise.reject(error);
   }
 );

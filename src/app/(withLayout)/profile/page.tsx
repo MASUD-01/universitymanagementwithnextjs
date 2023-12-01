@@ -1,12 +1,9 @@
-import React from "react";
-import "../../page.module.css";
-import { Col } from "antd";
-const Profile = () => {
+const ProfilePage = () => {
   return (
     <div>
-      <Col>welCome to my Profile</Col>
+      <h1>Welcome back to your profile</h1>
     </div>
   );
 };
 
-export default Profile;
+export default ProfilePage;

@@ -14,12 +14,11 @@ import ActionBar from "@/components/ui/ActionBar";
 import { useDebounced } from "@/redux/hooks";
 import dayjs from "dayjs";
 
-// import {
-//   useDeleteOfferedCourseMutation,
-//   useOfferedCoursesQuery,
-// } from "@/redux/api/offeredCourseApi";
+import {
+  useDeleteOfferedCourseMutation,
+  useOfferedCoursesQuery,
+} from "@/redux/api/offeredCourseApi";
 import { useOfferedCourseSectionsQuery } from "@/redux/api/offeredCourseSectionApi";
-import { useDeleteOfferedCourseMutation } from "@/redux/api/offredCourseApi";
 
 const OfferedCourseSectionPage = () => {
   const query: Record<string, any> = {};

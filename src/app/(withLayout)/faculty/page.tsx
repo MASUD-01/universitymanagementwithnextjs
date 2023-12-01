@@ -1,7 +1,9 @@
-import React from "react";
-
 const FacultyPage = () => {
-  return <div>FacultyPage</div>;
+  return (
+    <div>
+      <h1>FacultyPage</h1>
+    </div>
+  );
 };
 
 export default FacultyPage;

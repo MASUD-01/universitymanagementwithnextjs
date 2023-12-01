@@ -21,7 +21,6 @@ export const roomApi = baseApi.injectEndpoints({
           meta,
         };
       },
-      //@ts-ignore
       providesTags: [tagTypes.room],
     }),
     // get single room
@@ -30,7 +29,6 @@ export const roomApi = baseApi.injectEndpoints({
         url: `${ROOM_URL}/${id}`,
         method: "GET",
       }),
-      //@ts-ignore
       providesTags: [tagTypes.room],
     }),
     // create a new room
@@ -40,7 +38,6 @@ export const roomApi = baseApi.injectEndpoints({
         method: "POST",
         data,
       }),
-      //@ts-ignore
       invalidatesTags: [tagTypes.room],
     }),
     // update room
@@ -50,7 +47,6 @@ export const roomApi = baseApi.injectEndpoints({
         method: "PATCH",
         data: data.body,
       }),
-      //@ts-ignore
       invalidatesTags: [tagTypes.room],
     }),
     // delete room
@@ -59,7 +55,6 @@ export const roomApi = baseApi.injectEndpoints({
         url: `${ROOM_URL}/${id}`,
         method: "DELETE",
       }),
-      //@ts-ignore
       invalidatesTags: [tagTypes.room],
     }),
   }),
