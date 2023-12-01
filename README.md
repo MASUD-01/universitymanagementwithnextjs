@@ -2,17 +2,17 @@
 
 https://storyset.com/
 
-# react hook form use korchi
+--react hook form use korchi
 
 ans: FormItem #reusable component create korechi
 
-# antd design use kora hoiche
+--antd design use kora hoiche
 
-# Google fonts use kora hoice
+--Google fonts use kora hoice
 
-# redux use korechi
+--redux use korechi
 
-# axios(rtk query te Axios baseQuery)
+--axios(rtk query te Axios baseQuery)
 
 ans: eta more customizaion er jonne (fetchBaseQuery er jaygay axiosBaseQuery use korbo)
 
