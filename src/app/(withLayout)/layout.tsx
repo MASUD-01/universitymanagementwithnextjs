@@ -21,7 +21,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
 
   if (!isLoading) {
     //eta na dileo hobe karon global loading ache
-    return <p>Loading......</p>;
+    return <p>Loading.....</p>;
   }
 
   return (
