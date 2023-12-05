@@ -4,8 +4,6 @@ https://storyset.com/
 
 --react hook form use
 
-ans: FormItem #reusable component create korechi
-
 --antd design use
 
 --Google fonts use
@@ -19,8 +17,6 @@ ans: need more customizaion for (fetchBaseQuery er jaygay axiosBaseQuery use)
 # code spliting (api inject)
 
 # .unwrap();
-
-ans: data response e unwrap kore (mane data vitor res day na)
 
 # decoded accessToken
 
