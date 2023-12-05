@@ -2,19 +2,19 @@
 
 https://storyset.com/
 
---react hook form use korchi
+--react hook form use
 
 ans: FormItem #reusable component create korechi
 
---antd design use kora hoiche
+--antd design use
 
---Google fonts use kora hoice
+--Google fonts use
 
---redux use korechi
+--redux use 
 
 --axios(rtk query te Axios baseQuery)
 
-ans: eta more customizaion er jonne (fetchBaseQuery er jaygay axiosBaseQuery use korbo)
+ans: need more customizaion for (fetchBaseQuery er jaygay axiosBaseQuery use)
 
 # code spliting (api inject)
 
@@ -27,8 +27,6 @@ ans: data response e unwrap kore (mane data vitor res day na)
 ans: npm i jwt-decode
 
 # const router = useRouter();
-
-ans: redirect korar jonne use hoy--- import { useRouter } from "next/navigation";
 
 <!-- next js ------------------------app and layout ???????? ---
 app: app folder ta route hisabe kaj kore er vitor sob server side render hoy by default. er vitor page namee file thake. app er vitor root e je page.tsx abong layout.tsx thake eta localhost:3000 te run hoy. page.tsx e ja kisu kora hoy ta layout.tsx e children hodabe pay.

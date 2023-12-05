@@ -11,29 +11,29 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  useEffect(() => {
-    //route is protected
-    if (!userLoggedIn) {
-      router.push("/login");
-    }
-    setIsLoading(true);
-  }, [router, isLoading]);
+  // useEffect(() => {
+  //   //route is protected
+  //   if (!userLoggedIn) {
+  //     router.push("/login");
+  //   }
+  //   setIsLoading(true);
+  // }, [router, isLoading]);
 
-  if (!isLoading) {
-    return (
-      <Row
-        justify="center"
-        align="middle"
-        style={{
-          height: "100vh",
-        }}
-      >
-        <Space>
-          <Spin tip="Loading" size="large"></Spin>
-        </Space>
-      </Row>
-    );
-  }
+  // if (!isLoading) {
+  //   return (
+  //     <Row
+  //       justify="center"
+  //       align="middle"
+  //       style={{
+  //         height: "100vh",
+  //       }}
+  //     >
+  //       <Space>
+  //         <Spin tip="Loading" size="large"></Spin>
+  //       </Space>
+  //     </Row>
+  //   );
+  // }
 
   return (
     <Layout hasSider>
